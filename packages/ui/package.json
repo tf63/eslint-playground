@@ -1,0 +1,33 @@
+{
+    "name": "@repo/ui",
+    "version": "0.0.0",
+    "sideEffects": [
+        "**/*.css"
+    ],
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        "./styles.css": "./dist/index.css",
+        "./*": "./src/*"
+    },
+    "scripts": {
+        "predev": "rm -rf dist/",
+        "dev": "tailwindcss -i ./src/styles/styles.css -o ./dist/index.css --watch",
+        "prebuild": "rm -rf dist/",
+        "build": "tailwindcss -i ./src/styles/styles.css -o ./dist/index.css",
+        "lint": "biome lint .",
+        "lint:fix": "biome lint . --write",
+        "test": "vitest run",
+        "test:watch": "vitest watch",
+        "test:ui": "vitest watch --ui"
+    },
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@repo/tailwind": "workspace:*",
+        "@repo/typescript": "workspace:*"
+    }
+}

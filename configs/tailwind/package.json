@@ -1,0 +1,19 @@
+{
+    "name": "@repo/tailwind",
+    "version": "0.0.0",
+    "private": true,
+    "exports": {
+        "./tailwind": "./tailwind.config.ts",
+        "./postcss": "./postcss.config.mjs",
+        "./styles.css": "./dist/index.css"
+    },
+    "scripts": {
+        "predev": "rm -rf dist/",
+        "dev": "tailwindcss -i ./styles.css -o ./dist/index.css --watch",
+        "prebuild": "rm -rf dist/",
+        "build": "tailwindcss -i ./styles.css -o ./dist/index.css"
+    },
+    "devDependencies": {
+        "@repo/typescript": "workspace:*"
+    }
+}
