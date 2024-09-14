@@ -24,7 +24,6 @@
 	},
 	"devDependencies": {
 		"@repo/tailwind": "workspace:*",
-		"@repo/typescript": "workspace:*",
-		"@repo/eslint": "workspace:*"
+		"@repo/typescript": "workspace:*"
 	}
 }

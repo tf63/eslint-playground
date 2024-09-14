@@ -25,7 +25,6 @@
 	"types": "./dist/index.d.ts",
 	"devDependencies": {
 		"@repo/typescript": "workspace:*",
-		"@repo/eslint": "workspace:*",
 		"tsup": "^8.2.4"
 	}
 }

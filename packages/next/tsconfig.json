@@ -3,5 +3,5 @@
 	"compilerOptions": {
 		"types": ["@testing-library/jest-dom", "node", "vitest/globals"]
 	},
-	"include": ["**/*.ts", "**/*.tsx"]
+	"include": ["src", "test", ".next/types/**/*.ts", "next-env.d.ts"]
 }

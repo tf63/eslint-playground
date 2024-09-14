@@ -26,7 +26,6 @@
 	"devDependencies": {
 		"@next/bundle-analyzer": "^14.2.8",
 		"@repo/tailwind": "workspace:*",
-		"@repo/typescript": "workspace:*",
-		"@repo/eslint": "workspace:*"
+		"@repo/typescript": "workspace:*"
 	}
 }

@@ -20,6 +20,12 @@ importers:
       '@eslint/compat':
         specifier: ^1.1.1
         version: 1.1.1
+      '@eslint/eslintrc':
+        specifier: ^3.1.0
+        version: 3.1.0
+      '@eslint/js':
+        specifier: ^9.10.0
+        version: 9.10.0
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.3.1
         version: 4.3.1(prettier@3.3.3)
@@ -53,6 +59,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.19
         version: 18.3.0
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^7.9.0
+        version: 7.18.0(@typescript-eslint/parser@7.18.0)(eslint@8.57.0)(typescript@5.5.4)
       '@typescript-eslint/parser':
         specifier: ^7.9.0
         version: 7.18.0(eslint@8.57.0)(typescript@5.5.4)
@@ -74,6 +83,27 @@ importers:
       eslint:
         specifier: ^8
         version: 8.57.0
+      eslint-config-airbnb:
+        specifier: ^19.0.4
+        version: 19.0.4(eslint-plugin-import@2.30.0)(eslint-plugin-jsx-a11y@6.10.0)(eslint-plugin-react-hooks@4.6.2)(eslint-plugin-react@7.36.1)(eslint@8.57.0)
+      eslint-config-next:
+        specifier: 14.2.3
+        version: 14.2.3(eslint@8.57.0)(typescript@5.5.4)
+      eslint-config-prettier:
+        specifier: ^9.1.0
+        version: 9.1.0(eslint@8.57.0)
+      eslint-import-resolver-typescript:
+        specifier: ^3.6.1
+        version: 3.6.3(@typescript-eslint/parser@7.18.0)(eslint-plugin-import@2.30.0)(eslint@8.57.0)
+      eslint-plugin-import:
+        specifier: ^2.29.1
+        version: 2.30.0(@typescript-eslint/parser@7.18.0)(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.0)
+      eslint-plugin-storybook:
+        specifier: ^0.8.0
+        version: 0.8.0(eslint@8.57.0)(typescript@5.5.4)
+      eslint-plugin-unused-imports:
+        specifier: ^3.2.0
+        version: 3.2.0(@typescript-eslint/eslint-plugin@7.18.0)(eslint@8.57.0)
       jsdom:
         specifier: ^25.0.0
         version: 25.0.0
@@ -114,45 +144,6 @@ importers:
         specifier: workspace:*
         version: link:../typescript
 
-  configs/eslint:
-    devDependencies:
-      '@eslint/compat':
-        specifier: ^1.1.1
-        version: 1.1.1
-      '@eslint/eslintrc':
-        specifier: ^3.1.0
-        version: 3.1.0
-      '@eslint/js':
-        specifier: ^9.10.0
-        version: 9.10.0
-      '@typescript-eslint/eslint-plugin':
-        specifier: ^7.9.0
-        version: 7.18.0(@typescript-eslint/parser@7.18.0)(eslint@8.57.0)(typescript@5.5.4)
-      '@typescript-eslint/parser':
-        specifier: ^7.9.0
-        version: 7.18.0(eslint@8.57.0)(typescript@5.5.4)
-      eslint-config-airbnb:
-        specifier: ^19.0.4
-        version: 19.0.4(eslint-plugin-import@2.30.0)(eslint-plugin-jsx-a11y@6.10.0)(eslint-plugin-react-hooks@4.6.2)(eslint-plugin-react@7.36.1)(eslint@8.57.0)
-      eslint-config-next:
-        specifier: 14.2.3
-        version: 14.2.3(eslint@8.57.0)(typescript@5.5.4)
-      eslint-config-prettier:
-        specifier: ^9.1.0
-        version: 9.1.0(eslint@8.57.0)
-      eslint-import-resolver-typescript:
-        specifier: ^3.6.1
-        version: 3.6.3(@typescript-eslint/parser@7.18.0)(eslint-plugin-import@2.30.0)(eslint@8.57.0)
-      eslint-plugin-import:
-        specifier: ^2.29.1
-        version: 2.30.0(@typescript-eslint/parser@7.18.0)(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.0)
-      eslint-plugin-storybook:
-        specifier: ^0.8.0
-        version: 0.8.0(eslint@8.57.0)(typescript@5.5.4)
-      eslint-plugin-unused-imports:
-        specifier: ^3.2.0
-        version: 3.2.0(@typescript-eslint/eslint-plugin@7.18.0)(eslint@8.57.0)
-
   configs/tailwind:
     devDependencies:
       '@repo/typescript':
@@ -185,9 +176,6 @@ importers:
       '@next/bundle-analyzer':
         specifier: ^14.2.8
         version: 14.2.8
-      '@repo/eslint':
-        specifier: workspace:*
-        version: link:../../configs/eslint
       '@repo/tailwind':
         specifier: workspace:*
         version: link:../../configs/tailwind
@@ -197,9 +185,6 @@ importers:
 
   packages/pkg-tsup:
     devDependencies:
-      '@repo/eslint':
-        specifier: workspace:*
-        version: link:../../configs/eslint
       '@repo/typescript':
         specifier: workspace:*
         version: link:../../configs/typescript
@@ -209,9 +194,6 @@ importers:
 
   packages/pkg-vite:
     devDependencies:
-      '@repo/eslint':
-        specifier: workspace:*
-        version: link:../../configs/eslint
       '@repo/typescript':
         specifier: workspace:*
         version: link:../../configs/typescript
@@ -237,9 +219,6 @@ importers:
         specifier: ^2.5.2
         version: 2.5.2
     devDependencies:
-      '@repo/eslint':
-        specifier: workspace:*
-        version: link:../../configs/eslint
       '@repo/tailwind':
         specifier: workspace:*
         version: link:../../configs/tailwind
@@ -268,9 +247,6 @@ importers:
       '@crxjs/vite-plugin':
         specifier: 2.0.0-beta.25
         version: 2.0.0-beta.25
-      '@repo/eslint':
-        specifier: workspace:*
-        version: link:../../configs/eslint
       '@repo/tailwind':
         specifier: workspace:*
         version: link:../../configs/tailwind
@@ -339,9 +315,6 @@ importers:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@repo/eslint':
-        specifier: workspace:*
-        version: link:../../configs/eslint
       '@repo/tailwind':
         specifier: workspace:*
         version: link:../../configs/tailwind

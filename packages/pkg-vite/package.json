@@ -24,7 +24,6 @@
 	"types": "./dist/index.d.ts",
 	"devDependencies": {
 		"@repo/typescript": "workspace:*",
-		"@repo/eslint": "workspace:*",
 		"vite-plugin-dts": "^4.1.0"
 	}
 }

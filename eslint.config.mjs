@@ -15,18 +15,18 @@ const compat = new FlatCompat({
 	allConfig: js.configs.all,
 });
 
-export const extend = compat.extends(
-	"airbnb",
-	"plugin:@typescript-eslint/recommended",
-	"plugin:@typescript-eslint/recommended-requiring-type-checking",
-	"plugin:import/errors",
-	"plugin:import/warnings",
-	"plugin:import/typescript",
-	"next/core-web-vitals",
+const extend = compat.extends(
+	// 'airbnb',
+	// 'plugin:@typescript-eslint/recommended',
+	// 'plugin:@typescript-eslint/recommended-requiring-type-checking',
+	// 'plugin:import/errors',
+	// 'plugin:import/warnings',
+	// 'plugin:import/typescript',
+	// 'next/core-web-vitals',
 	"prettier",
 );
 
-export const rules = {
+const rules = {
 	"no-implicit-coercion": ["error", { boolean: false }],
 	"no-empty-pattern": "off",
 	"no-unused-vars": "off",
@@ -54,9 +54,15 @@ export const rules = {
 	// '@typescript-eslint/strict-boolean-expressions': 'error',
 };
 
-export const ignores = {
+const ignores = {
 	ignores: [
-		"vite.config.ts",
+		"**/vite.config.ts",
+		"**/tsup.config.ts",
+		"**/postcss.config.mjs",
+		"**/vitest.config.ts",
+		"**/playwright.config.ts",
+		"**/tailwind.config.ts",
+		"**/next.config.mjs",
 		"**/node_modules/**/*",
 		"**/public/**/*",
 		"**/dist/**/*",
@@ -78,8 +84,16 @@ export const ignores = {
 
 export default [
 	ignores,
-	// ...fixupConfigRules(extend),
+	...fixupConfigRules(extend),
 	{
+		files: [
+			"**/*.js",
+			"**/*.jsx",
+			"**/*.mjs",
+			"**/*.cjs",
+			"**/*.ts",
+			"**/*.tsx",
+		],
 		rules: rules,
 		plugins: {
 			"unused-imports": unusedImports,
@@ -89,17 +103,26 @@ export default [
 				"@typescript-eslint/parser": [".ts", ".tsx"],
 			},
 		},
+		languageOptions: {
+			parser: tsParser,
+			ecmaVersion: 10,
+			sourceType: "script",
+
+			parserOptions: {
+				project: "./tsconfig.json",
+			},
+		},
+	},
+	{
+		files: ["**/features/", "**/components/", "**/lib/"],
+		rules: {
+			"import/no-default-export": "error",
+		},
 	},
 	{
 		files: ["**/*.stories.*", "**/*.story.*"],
 		rules: {
 			useHookAtTopLevel: "off",
-		},
-	},
-	{
-		files: ["features/", "components/", "lib/"],
-		rules: {
-			"import/no-default-export": "error",
 		},
 	},
 ];
