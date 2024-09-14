@@ -1,29 +1,30 @@
 {
-    "name": "@repo/react",
-    "version": "0.0.0",
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "prebuild": "rm -rf dist/",
-        "build": "tsc --noEmit && vite build",
-        "lint": "biome lint .",
-        "lint:fix": "biome lint . --write",
-        "test": "vitest run",
-        "test:watch": "vitest watch",
-        "test:ui": "vitest watch --ui",
-        "test:e2e": "playwright test",
-        "test:e2e:ui": "playwright show-report --port 0"
-    },
-    "dependencies": {
-        "@repo/ui": "workspace:*",
-        "clsx": "^2.1.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "tailwind-merge": "^2.5.2"
-    },
-    "devDependencies": {
-        "@repo/tailwind": "workspace:*",
-        "@repo/typescript": "workspace:*"
-    }
+	"name": "@repo/react",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"prebuild": "rm -rf dist/",
+		"build": "tsc --noEmit && vite build",
+		"lint": "eslint . --max-warnings 0",
+		"lint:fix": "eslint . --max-warnings 0 --fix",
+		"test": "vitest run",
+		"test:watch": "vitest watch",
+		"test:ui": "vitest watch --ui",
+		"test:e2e": "playwright test",
+		"test:e2e:ui": "playwright show-report --port 0"
+	},
+	"dependencies": {
+		"@repo/ui": "workspace:*",
+		"clsx": "^2.1.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"tailwind-merge": "^2.5.2"
+	},
+	"devDependencies": {
+		"@repo/tailwind": "workspace:*",
+		"@repo/typescript": "workspace:*",
+		"@repo/eslint": "workspace:*"
+	}
 }
